@@ -1,11 +1,10 @@
 # ❌ No-as-a-Service Go 🐹
 
-## Faster port with own non limited instance
+## Ported to Go as a learning project.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dan-collins-dev/no-as-a-service-go/main/assets/imgs/naas-with-no-logo-bunny-gopher.png" width="800" alt="No-as-a-Service Banner" width="70%"/>
 </p>
-Ported to Go as a learning project.
 
 Ever needed a graceful way to say “no”?  
 This tiny API returns random, generic, creative, and sometimes hilarious rejection reasons — perfectly suited for any scenario: personal, professional, student life, dev life, or just because.
