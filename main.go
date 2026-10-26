@@ -1,13 +1,16 @@
 package main
 
 import (
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"log"
 	"math/rand/v2"
 	"net/http"
-	"os"
 )
+
+//go:embed reasons.json
+var reasonsJSON []byte
 
 var reasons = loadReasons()
 
@@ -36,15 +39,10 @@ func getNo(w http.ResponseWriter, r *http.Request) {
 }
 
 func loadReasons() []string {
-	data, err := os.ReadFile("./reasons.json")
-	if err != nil {
-		log.Fatal("An error occurred trying to read reasons.json")
-	}
-
 	var reasons []string
-	err = json.Unmarshal(data, &reasons)
+	err := json.Unmarshal(reasonsJSON, &reasons)
 	if err != nil {
-		log.Fatal("An error occured trying to unmarshal the reasons")
+		log.Fatalf("failed to decode embedded reasons.json: %v", err)
 	}
 
 	return reasons
