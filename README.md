@@ -17,7 +17,7 @@ Built for humans, excuses, and humor.
 
 **Base URL**
 ```
-Not Hosted Yet
+https://naas.isalman.dev/no
 ```
 
 **Method:** `GET`  
@@ -51,7 +51,7 @@ cd no-as-a-service-go
 
 ### 2. Run
 ```bash
-Update when implemented
+go run main.go
 ```
 
 The API will be live at:
