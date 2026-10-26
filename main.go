@@ -20,8 +20,14 @@ func main() {
 
 	router.HandleFunc("GET /no", getNo)
 
+	// For vercel deployments
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
 	fmt.Println("Server starting on port 3000")
-	err := http.ListenAndServe(":3000", router)
+	err := http.ListenAndServe(":"+port, router)
 	if err != nil {
 		log.Fatal("Error occured attempting to start server")
 	}
