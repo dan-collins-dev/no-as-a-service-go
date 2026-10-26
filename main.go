@@ -16,15 +16,10 @@ type No struct {
 }
 
 func main() {
+	port := "3000"
 	router := http.NewServeMux()
 
 	router.HandleFunc("GET /no", getNo)
-
-	// For vercel deployments
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "3000"
-	}
 
 	fmt.Printf("Server starting on port %s", port)
 	err := http.ListenAndServe(":"+port, router)
