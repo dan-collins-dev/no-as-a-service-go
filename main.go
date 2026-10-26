@@ -26,7 +26,7 @@ func main() {
 		port = "3000"
 	}
 
-	fmt.Println("Server starting on port 3000")
+	fmt.Printf("Server starting on port %s", port)
 	err := http.ListenAndServe(":"+port, router)
 	if err != nil {
 		log.Fatal("Error occured attempting to start server")
